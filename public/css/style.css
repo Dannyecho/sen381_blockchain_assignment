@@ -1,0 +1,11 @@
+header .nav .nav-item button{
+    color: #fff;
+}
+
+header .nav .nav-item button.active{
+    color: #000;
+}
+
+form#transaction-form label sup{
+    color: red;
+}

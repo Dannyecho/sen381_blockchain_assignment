@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Block Chain UI</title>
+</head>
+
+<body>
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <h1 class="text-white">
+                        <a href="/"
+                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">Block
+                            Chain UI
+                        </a>
+                    </h1>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                                aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                aria-controls="profile-tab-pane" aria-selected="false">Add Transaction</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                aria-controls="contact-tab-pane" aria-selected="false">All Pending Transactions</button>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab"
+                                data-bs-target="#disabled-tab-pane" type="button" role="tab"
+                                aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+                        </li> -->
+                    </ul>
+                    <!-- <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                <li>
+                  <a href="#" class="nav-link text-secondary">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"></use></svg>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"></use></svg>
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link text-white">
+                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
+                    Customers
+                  </a>
+                </li>
+              </ul> -->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="px-3 py-2 border-bottom mb-3">
+            <div class="container d-flex flex-wrap justify-content-center">
+                <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-light text-dark me-2">Login</button>
+                    <button type="button" class="btn btn-primary">Sign-up</button>
+                </div>
+            </div>
+        </div> -->
+    </header>
+    <div class="container my-5">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+                <div class="position-relative p-5 text-center text-muted bg-light border border-dashed rounded-5">
+                    <button type="button"
+                        class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill"
+                        aria-label="Close"></button>
+                    <svg class="bi mt-5 mb-3" width="48" height="48">
+                        <use xlink:href="#check2-circle"></use>
+                    </svg>
+                    <h1 class="text-body-emphasis">BLOCKCHAIN UI</h1>
+                    <p class="col-lg-6 mx-auto mb-4">
+                        Developed by Daniel Inaju <br>
+                        <i>VUG/SEN/22/7763</i>
+                    </p>
+                    <hr>
+                    <div id="block-summary" class="d-flex justify-content-center">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="bg-light p-3">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 border p-2">
+                            <h3 class="text-center">Add New Transaction</h3>
+                            <hr>
+                            <form id="transaction-form" action="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Amount <sup>*</sup></label><br>
+                                        <input type="number" class="form-control" placeholder="e.g 100" name="amount" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Sender <sup>*</sup></label><br>
+                                        <input type="text" class="form-control" placeholder="e.g Daniel" name="sender" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Receiver <sup>*</sup></label><br>
+                                        <input name="recipient" type="text" class="form-control" placeholder="e.g Dr. Chibueze" required>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-end">
+                                    <button type="submit" id="add-transaction-btn" class="btn btn-secondary">Add
+                                        Transaction</button>
+                                </div>
+                                <br>
+                            </form>
+                        </div>
+                        <div id="transaction-entries" class="col-md-6">
+                            <div class="bg-secondary p-5 h-100 d-flex align-items-center">
+                                <h2 class="text-white">Add new transaction to see result</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                <div id="pending-transactions" class="bg-light p-3">
+                    <div class="bg-secondary text-white p-5">
+                        <h3>Opps! You do no have any pending transaction 😢</h3>
+                        <hr>
+                        <p>Add a transaction add check again.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+                tabindex="0">
+                ...</div>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="lab7/blockchain.js"></script> -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
